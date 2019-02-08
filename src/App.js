@@ -22,6 +22,9 @@ class App extends Component {
         }
     }
 
+    // генерируем массив из заданного числя ячеек,
+    // находим случайное число от 0 до 35
+    // присваиваем ячейке с таким индексом спрятанный элемент
     generateCells = () => {
         let cells = [];
         let cellsCount = FIELD_SIZE ** 2;
@@ -55,6 +58,7 @@ class App extends Component {
             state.cells = cells;
             state.counter = state.counter + 1;
 
+            // если кругляш найден, обновляем свойство itemFound
             if (cell.hasItem) {
               state.itemFound = true;
             }
@@ -64,6 +68,8 @@ class App extends Component {
         }
     };
 
+    // обновляем состояние state: генерируем новые ячейки,
+    // обнуляем счетчик, делаем элемент ненайденным
     resetGame = () => {
 
       this.setState({
